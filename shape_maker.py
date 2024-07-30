@@ -1,7 +1,5 @@
 import turtle
 
-#input_variab    ='b'
-#print(a.isdigit())
 
 # Initializing the turtle
 t = turtle.Turtle()
@@ -24,20 +22,17 @@ def draw(num_sides):
 
 
 def main():
-    #    while True:
-
-    run = False
+    run = True
     num_sides = input("How many sides do you want your shape to have? ")
 
-    if num_sides.isdigit():
-        run = True
-
     while run:
-        draw(int(num_sides))
-
-        #break
-    #except ValueError:
-    #    print("Invalid input. Please enter a valid number for the sides.")
+        if num_sides.isdigit():
+            run = False
+            draw(int(num_sides))
+        
+        else:
+            num_sides = input("Invalid input. Please enter a valid number for the sides. ")  
+            draw(int(num_sides))
 
 
 if __name__ == "__main__":
