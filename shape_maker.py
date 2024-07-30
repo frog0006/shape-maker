@@ -1,32 +1,43 @@
 import turtle
 
+#input_variab    ='b'
+#print(a.isdigit())
+
 # Initializing the turtle
 t = turtle.Turtle()
+
+
+def draw(num_sides):
+
+    color_choice = input("What color do you want your shape to be? ")
+    print(f"You chose to have a {color_choice} shape with {num_sides} sides.")
+    t.fillcolor(color_choice)
+    t.begin_fill()
+
+    for i in range(num_sides):
+        t.forward(50)
+        t.left(360 / num_sides)
+    t.end_fill()
+
+    t.hideturtle()
+    t.screen.mainloop()
 
 
 def main():
     #    while True:
 
-    try:
-        num_sides = int(
-            input("How many sides do you want your shape to have? "))
+    run = False
+    num_sides = input("How many sides do you want your shape to have? ")
+
+    if num_sides.isdigit():
+        run = True
+
+    while run:
+        draw(int(num_sides))
+
         #break
-    except ValueError:
-        print("Invalid input. Please enter a valid number for the sides.")
-
-    color_choice = input("What color do you want your shape to be? ")
-    print(f"You chose to have a {color_choice} shape with {num_sides} sides.")
-    t.fillcolor(color_choice)
-    t.begin_fill() 
-    for i in range(num_sides):
-        t.forward(50)
-        t.left(360 / num_sides)
-    t.end_fill() 
-
-
-    t.hideturtle()
-    t.screen.mainloop()
-    
+    #except ValueError:
+    #    print("Invalid input. Please enter a valid number for the sides.")
 
 
 if __name__ == "__main__":
