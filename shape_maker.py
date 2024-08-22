@@ -7,6 +7,10 @@ t = turtle.Turtle()
 screen = turtle.Screen()
 
 def draw(num_sides):
+    # Ask the user for the background color and set it
+    background_color = input("What color do you want the background to be? ")
+    screen.bgcolor(background_color)
+
     # Ask the user for the color and size of the shape
     color_choice = input("What color do you want your shape to be? ")
     print(f"You chose to have a {color_choice} shape with {num_sides} sides.")
