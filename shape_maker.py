@@ -31,8 +31,8 @@ def draw(num_sides):
     screen_width = screen.window_width() // 2
     screen_height = screen.window_height() // 2
 
-    # Set the scaled-down base side length and scale it by the user's choice
-    base_side_length = 15  # Smaller base side length for scaled-down shapes
+    # Set a larger base side length and scale it by the user's choice
+    base_side_length = 50  # Increased base side length for larger shapes
     side_length = base_side_length * size_choice  # Scale based on user's input
 
     # Calculate the radius of the bounding circle (from center to a vertex)
@@ -56,13 +56,13 @@ def draw(num_sides):
 
     # Move the turtle to write the message below the shape
     t.penup()
-    text_y_pos = y_pos - (shape_radius + 20)  # Offset to position the text below the shape
-    text_y_pos = max(text_y_pos, -screen_height + 30)  # Ensure text stays within screen bounds
-    t.goto(-screen_width + 20, text_y_pos)
+    text_y_pos = y_pos - (shape_radius + 40)  # Increased offset to position the text below the larger shape
+    text_y_pos = max(text_y_pos, -screen_height + 60)  # Ensure text stays within screen bounds
+    t.goto(-screen_width + 40, text_y_pos)
     t.pendown()
 
-    # Write the message
-    t.write(f"A {color_choice} shape with {num_sides} sides and size {size_choice}.", font=("Arial", 12, "normal"))
+    # Write the message with larger font
+    t.write(f"A {color_choice} shape with {num_sides} sides and size {size_choice}.", font=("Arial", 18, "normal"))
 
     t.hideturtle()
     screen.mainloop()
